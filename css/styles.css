@@ -667,21 +667,21 @@ p {
   margin-bottom: 12px;
 }
 .form-field {
-  position: relative;
   width: 100%;
   margin-bottom: 10px;
 }
 .modal-form-label {
+  display: block;
+  padding-bottom: 4px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
 
   color: var(--primary-text-color);
-  display: block;
 }
-.modal-form-label {
-  padding-bottom: 4px;
+.input-wrap {
+  position: relative;
 }
 .modal-form-input {
   width: 100%;
@@ -700,11 +700,10 @@ p {
   position: absolute;
   left: 12px;
   bottom: 11px;
-  fill: currentColor;
-  transition: color var(--transform-duration) var(--time-function);
+  transition: fill var(--transform-duration) var(--time-function);
 }
 .modal-form-input:focus + .modal-input-icon {
-  color: var(--accent-color);
+  fill: var(--accent-color);
 }
 .form-user-comment {
   width: 100%;
@@ -770,28 +769,32 @@ p {
 .modal-form-button:focus {
   background-color: var(--secondary-accent-color);
 }
-.conditions-checkbox {
+.policy-checkbox {
   display: inline-block;
 }
-.conditions-icon {
-  display: inline-block;
+.policy-icon {
   width: 16px;
   height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    background-size: contain;
+      background-repeat: no-repeat;
+  fill: transparent;
   border: 2px solid var(--secondary-text-color);
   border-radius: 4px;
   margin-right: 8px;
-  transition: background-image var(--transform-duration) var(--time-function),
-  background-color var(--transform-duration) var(--time-function),
+  transition: background-color var(--transform-duration) var(--time-function),
   border-color var(--transform-duration) var(--time-function),
-  outline-color var(--transform-duration) var(--time-function);
+  fill var(--transform-duration) var(--time-function);
 }
 
-.conditions-checkbox:checked + .conditions-icon {
+.policy-checkbox:checked + .policy-icon {
+  fill: var(--tertiary-text-color);
   background-color: var(--accent-color);
-  background-image: url(../images/icon-check.svg);
-  border: 2px solid var(--accent-color);
-  background-origin: border-box;
+  border-color: var(--accent-color);
   outline: transparent;
-  background-position: 50%;
-  background-size: contain;
+}
+.policy-checkbox:focus + .policy-icon {
+border-color: var(--accent-color);
 }
