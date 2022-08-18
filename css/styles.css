@@ -777,14 +777,21 @@ p {
   display: inline-block;
   width: 16px;
   height: 15px;
-  background-image: url(../images/icons.svg#icon-check);
   border: 2px solid var(--secondary-text-color);
   border-radius: 4px;
+  margin-right: 8px;
+  transition: background-image var(--transform-duration) var(--time-function),
+  background-color var(--transform-duration) var(--time-function),
+  border-color var(--transform-duration) var(--time-function),
+  outline-color var(--transform-duration) var(--time-function);
 }
 
 .conditions-checkbox:checked + .conditions-icon {
   background-color: var(--accent-color);
-  background-image: url(../images/icons.svg#icon-check);
+  background-image: url(../images/icon-check.svg);
+  border: 2px solid var(--accent-color);
   background-origin: border-box;
+  outline: transparent;
+  background-position: 50%;
   background-size: contain;
 }
